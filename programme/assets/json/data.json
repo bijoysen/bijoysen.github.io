@@ -50,8 +50,8 @@
     ]
   },
   "files": {
-    "image": "./../assets/images/my.jpg",
-    "doc": "./../assets/files/About.docx"
+    "image": "assets/images/my.jpg",
+    "doc": "assets/files/About.docx"
   },
   "aboutme": "<p>Hello World, My name is Gajo.</p>"
 }

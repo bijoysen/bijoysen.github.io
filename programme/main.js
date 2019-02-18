@@ -131,7 +131,7 @@ var AppComponent = /** @class */ (function () {
         this.ajax = ajax;
         this.dataService = dataService;
         this.title = 'programme';
-        this.ajax.get('https://bijoysen.github.io/programme/assets/json/data.json').then(function (data) {
+        this.ajax.get('assets/json/data.json').then(function (data) {
             console.log(data);
             _this.dataService.websiteData = data;
         }).catch(function () {
