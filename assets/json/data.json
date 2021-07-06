@@ -1,0 +1,26 @@
+{
+  "website": {
+    "header": {
+      "greeting": "Welcome to my website"
+    },
+    "menu": [
+      "home",
+      "about me",
+      "skills",
+      "education",
+      "employment",
+      "portfolio",
+      "contact"
+    ],
+    "aboutMe": {
+      "name": "Bijoy Sen",
+      "email": "bjoysen@gmail.com",
+      "phone": "9830943040",
+      "nationality": "India"
+    },
+    "shortHistory": {
+      "title": "I'm a UI/UX Designer & Frontend Developer from Victoria, Australia. I hold a master degree of Web Design from the World University.",
+      "content": "Worked with project teams to create user-friendly and appealing application interfaces and websites for users. Met with project manager, business analyst and architect right from beginning of project, creating rough mock-ups that were refined and extended over many iterations. Adjustments to mock-ups as necessary to address problems encountered."
+    }
+  }
+}
