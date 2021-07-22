@@ -1,0 +1,84 @@
+{
+  "user": {
+    "info": {
+      "name": {
+        "firstName": "Bijoy",
+        "lastName": "Sen"
+      },
+      "designation": {
+        "primary": "UI / Frontend Developer",
+        "secondary": "Youtuber"
+      },
+      "phone": {
+        "main": "9830943040",
+        "alternative": "7278134126"
+      },
+      "email": "bjoysen@gmail.com",
+      "address": "Kolkata, India",
+      "languages": "Bengali, Hindi, English",
+      "about": "Versatile Front-end Developer with 10+ years of experience in developing websites using HTML5, CSS3, SASS, jQuery, Angular and managing sites in CMS like Wordpress and responsive design seeking to use proven skills in UI prototyping to enhance user experience."
+    },
+    "skills": {
+      "languages": "HTML, HTML5, XHTML, CSS, CSS3, JavaScript",
+      "pre-processor": "SASS, LESS",
+      "task-runner": "Gulp.js, Grunt.js",
+      "library": "jQuery, React",
+      "framework": "Angular, React Native, Bootstrap, Ionic",
+      "cms": "wordpress",
+      "tools": {
+        "coding": "VS Code, DreamWeaver, Sublime Text",
+        "design": "PhotoShop",
+        "version-control": "SVN and Git",
+        "online": "jsfiddle, codepen, stackblitz"
+      }
+    },
+    "experience": {
+      "company": [
+        {
+          "name": "Evika Systems",
+          "location": "Kolkata",
+          "designation": "Trainee Web Designer",
+          "duration": "June 2012 - June 2013"
+        },
+        {
+          "name": "Capital Numbers Infotech",
+          "location": "Kolkata",
+          "designation": "Front-End Web Developer",
+          "duration": "June 2013 - November 2014"
+        },
+        {
+          "name": "Netzrezepte Technologies Pvt. Ltd",
+          "location": "Kolkata",
+          "designation": "UI Developer",
+          "duration": "November 2014 - October 2015"
+        },
+        {
+          "name": "Indus Net Technologies",
+          "location": "Kolkata",
+          "designation": "Software Engineer",
+          "duration": "November 2015 - PRESENT"
+        }
+      ]
+    },
+    "headerMenu": [
+      "About",
+      "Resume",
+      "Portfolio",
+      "Contact"
+    ],
+    "footerMenu": [
+      {
+        "name": "About",
+        "link": "#about"
+      },
+      {
+        "name": "Resume",
+        "link": "#resume"
+      },
+      {
+        "name": "Contact",
+        "link": "#contact"
+      }
+    ]
+  }
+}
