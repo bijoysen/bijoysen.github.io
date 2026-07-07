@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-svh items-center overflow-hidden pt-28 pb-20 md:pt-24"
+      className="relative flex min-h-svh items-center overflow-hidden pt-28 pb-28 md:pt-24 md:pb-32"
     >
       {/* Decorative background */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
@@ -15,7 +15,7 @@ export default function Hero() {
       </div>
 
       <div className="container-page w-full">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_auto_1fr] lg:gap-6">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_auto] lg:gap-12">
           {/* Left column */}
           <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
             <span className="inline-flex items-center gap-2 rounded-full border border-teal/20 bg-teal/10 px-3 py-1 text-xs font-semibold text-teal-dark">
@@ -26,12 +26,16 @@ export default function Hero() {
               Available for new opportunities
             </span>
 
-            <p className="mt-5 font-script text-4xl text-navy md:text-5xl">
+            <p className="mt-5 mb-4 font-script text-3xl text-navy md:text-4xl">
               {profile.greeting}
             </p>
             <h1 className="font-display text-5xl font-extrabold leading-tight tracking-tight text-amber md:text-6xl">
               {profile.firstName} {profile.lastName}.
             </h1>
+            <p className="mt-1 font-script text-3xl text-navy md:text-4xl">
+              <span className="text-teal">{profile.role.split(" ")[0]}</span>{" "}
+              {profile.role.split(" ").slice(1).join(" ")}.
+            </p>
             <p className="mt-3 max-w-md text-base font-medium text-navy/75">
               {profile.tagline}
             </p>
@@ -101,16 +105,6 @@ export default function Hero() {
               </div>
             </div>
           </div>
-
-          {/* Right column */}
-          <div className="order-3 hidden flex-col items-end gap-8 lg:flex">
-            <div className="flex justify-end text-teal" aria-hidden="true">
-              <DashedArrow />
-            </div>
-            <p className="font-script text-3xl text-navy md:text-4xl">
-              <span className="text-teal">Frontend</span> Developer.
-            </p>
-          </div>
         </div>
       </div>
 
@@ -142,33 +136,6 @@ function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>) {
       {...props}
     >
       <path d="m6 9 6 6 6-6" />
-    </svg>
-  );
-}
-
-function DashedArrow() {
-  return (
-    <svg
-      width="150"
-      height="80"
-      viewBox="0 0 160 90"
-      fill="none"
-      className="text-teal"
-    >
-      <path
-        d="M8 82c14-2 26-14 24-30C30 36 14 30 10 44c-4 14 12 22 30 18 26-6 40-34 66-46"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeDasharray="6 8"
-      />
-      <path
-        d="M152 20l-6-8-9 5"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
     </svg>
   );
 }

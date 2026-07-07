@@ -8,11 +8,11 @@ export default function Contact() {
         <div className="mx-auto max-w-3xl rounded-3xl bg-teal px-6 py-14 text-center text-white shadow-lg md:px-12">
           <p className="font-script text-3xl text-amber">Get In Touch</p>
           <h2 className="mt-1 font-display text-3xl font-bold md:text-4xl">
-            Let&apos;s build something together
+            Open to new opportunities
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-white/80">
-            Have a project in mind or just want to say hi? My inbox is always
-            open.
+            Exploring senior frontend roles — recruiters and hiring managers,
+            feel free to reach out.
           </p>
 
           <a

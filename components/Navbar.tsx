@@ -6,6 +6,7 @@ import { navLinks, profile } from "@/lib/data";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeHref, setActiveHref] = useState(navLinks[0]?.href ?? "#home");
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
   const firstMenuLinkRef = useRef<HTMLAnchorElement>(null);
 
@@ -14,6 +15,35 @@ export default function Navbar() {
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const headerOffset = 80;
+
+    const updateActiveSection = () => {
+      const scrollPos = window.scrollY + headerOffset + 1;
+      let current = navLinks[0]?.href ?? "#home";
+
+      for (const link of navLinks) {
+        const section = document.getElementById(link.href.slice(1));
+        if (!section) continue;
+
+        const top = section.getBoundingClientRect().top + window.scrollY;
+        if (top <= scrollPos) {
+          current = link.href;
+        }
+      }
+
+      setActiveHref(current);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, []);
 
   useEffect(() => {
@@ -36,6 +66,18 @@ export default function Navbar() {
     toggleButtonRef.current?.focus();
   };
 
+  const renderNavLabel = (label: string, isActive: boolean) => {
+    if (!isActive) return label;
+
+    return (
+      <span className="text-teal">
+        <span className="mr-1 text-amber">(</span>
+        {label}
+        <span className="ml-1 text-amber">)</span>
+      </span>
+    );
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all ${
@@ -49,24 +91,21 @@ export default function Navbar() {
         </a>
 
         <ul className="hidden items-center gap-7 lg:flex">
-          {navLinks.map((link, i) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="group relative text-sm font-medium text-navy transition-colors hover:text-teal"
-              >
-                {i === 0 ? (
-                  <span className="text-teal">
-                    <span className="mr-1 text-amber">(</span>
-                    {link.label}
-                    <span className="ml-1 text-amber">)</span>
-                  </span>
-                ) : (
-                  link.label
-                )}
-              </a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.href === activeHref;
+
+            return (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className="group relative text-base font-medium text-navy transition-colors hover:text-teal"
+                >
+                  {renderNavLabel(link.label, isActive)}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="hidden lg:block">
@@ -111,18 +150,25 @@ export default function Navbar() {
           className="border-t border-black/5 bg-cream/95 backdrop-blur lg:hidden"
         >
           <ul className="container-page flex flex-col gap-1 py-4">
-            {navLinks.map((link, i) => (
-              <li key={link.href}>
-                <a
-                  ref={i === 0 ? firstMenuLinkRef : undefined}
-                  href={link.href}
-                  onClick={closeMenu}
-                  className="block rounded-lg px-2 py-2.5 text-navy hover:bg-black/5 hover:text-teal"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link, i) => {
+              const isActive = link.href === activeHref;
+
+              return (
+                <li key={link.href}>
+                  <a
+                    ref={i === 0 ? firstMenuLinkRef : undefined}
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    onClick={closeMenu}
+                    className={`block rounded-lg px-2 py-2.5 hover:bg-black/5 hover:text-teal ${
+                      isActive ? "font-semibold text-teal" : "text-navy"
+                    }`}
+                  >
+                    {renderNavLabel(link.label, isActive)}
+                  </a>
+                </li>
+              );
+            })}
             <li className="pt-2">
               <a
                 href={profile.cvUrl}

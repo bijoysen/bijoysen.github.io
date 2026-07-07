@@ -3,7 +3,7 @@ export const profile = {
   firstName: "Bijay",
   lastName: "Sen",
   role: "Frontend Developer",
-  greeting: "Hy! I Am",
+  greeting: "Hey! I am",
   tagline: "I build fast, accessible web experiences, and I love what I do.",
   // Career start (June 2012). Years of experience is derived from this date.
   careerStart: "2012-06-01",
