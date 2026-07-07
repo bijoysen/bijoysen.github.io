@@ -1,12 +1,12 @@
-import { getYearsOfExperience, profile } from "@/lib/data";
+import { formatExperienceDuration, profile } from "@/lib/data";
 
 export default function About() {
-  const years = getYearsOfExperience();
+  const experience = formatExperienceDuration();
 
   const highlights = [
     {
       label: "Experience",
-      value: `${years}+ Years`,
+      value: experience,
       accent: "text-amber",
     },
     {

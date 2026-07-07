@@ -30,14 +30,42 @@ export const profile = {
 };
 
 export function getYearsOfExperience(from: string = profile.careerStart): number {
+  return getExperienceDuration(from).years;
+}
+
+export function getExperienceDuration(from: string = profile.careerStart): {
+  years: number;
+  months: number;
+} {
   const start = new Date(from);
   const now = new Date();
+
   let years = now.getFullYear() - start.getFullYear();
-  const monthDiff = now.getMonth() - start.getMonth();
-  if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < start.getDate())) {
-    years -= 1;
+  let months = now.getMonth() - start.getMonth();
+
+  if (now.getDate() < start.getDate()) {
+    months -= 1;
   }
-  return years;
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+
+  return { years, months };
+}
+
+export function formatExperienceDuration(
+  from: string = profile.careerStart,
+): string {
+  const { years, months } = getExperienceDuration(from);
+  const parts: string[] = [];
+  if (years > 0) {
+    parts.push(`${years} ${years === 1 ? "Year" : "Years"}`);
+  }
+  if (months > 0) {
+    parts.push(`${months} ${months === 1 ? "Month" : "Months"}`);
+  }
+  return parts.length > 0 ? parts.join(" ") : "0 Months";
 }
 
 export type SocialLink = {
@@ -47,10 +75,12 @@ export type SocialLink = {
 };
 
 export const socials: SocialLink[] = [
-  { label: "Facebook", href: "https://facebook.com/", icon: "facebook" },
-  { label: "Instagram", href: "https://instagram.com/", icon: "instagram" },
-  { label: "Twitter", href: "https://twitter.com/", icon: "twitter" },
-  { label: "LinkedIn", href: "https://linkedin.com/", icon: "linkedin" },
+  { label: "GitHub", href: "https://github.com/bijoysen", icon: "github" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/bijoy-sen",
+    icon: "linkedin",
+  },
 ];
 
 export type NavLink = { label: string; href: string };
@@ -58,7 +88,6 @@ export type NavLink = { label: string; href: string };
 export const navLinks: NavLink[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
@@ -208,10 +237,10 @@ export const experiences: Experience[] = [
     company: "Ericsson India Pvt. Ltd., Kolkata",
     period: "Mar 2022 - Present",
     bullets: [
-      "Build and maintain scalable React/JavaScript UIs for enterprise telecom platforms.",
-      "Improve performance with code splitting, lazy loading, and asset optimization.",
-      "Integrate REST APIs, translate UX designs into responsive cross-browser components.",
-      "Mentor juniors and use AI tools (Cursor, Copilot, Gemini) to accelerate delivery.",
+      "Architect and maintain scalable React/JavaScript UIs powering enterprise telecom platforms.",
+      "Boost application performance through strategic code splitting, lazy loading, and asset optimization.",
+      "Integrate complex REST APIs and translate intricate UX designs into responsive, cross-browser components.",
+      "Mentor junior engineers and champion AI-assisted workflows (Cursor, Copilot, Gemini) to accelerate delivery.",
     ],
   },
   {
@@ -219,10 +248,10 @@ export const experiences: Experience[] = [
     company: "Indus Net Technologies, Kolkata",
     period: "Nov 2015 - Mar 2022",
     bullets: [
-      "Built responsive, pixel-perfect interfaces for global clients using HTML5, CSS3, JS, React, and Angular.",
-      "Converted PSD/Figma designs into semantic, SEO-friendly, W3C-compliant markup.",
-      "Created reusable component libraries and optimized performance across projects.",
-      "Collaborated across teams and supported deployments to deliver milestones on schedule.",
+      "Delivered responsive, pixel-perfect interfaces for global clients using HTML5, CSS3, JS, React, and Angular.",
+      "Transformed PSD/Figma designs into semantic, SEO-friendly, W3C-compliant markup.",
+      "Engineered reusable component libraries that streamlined development and improved performance across projects.",
+      "Partnered with cross-functional teams and led deployment support to consistently hit project milestones.",
     ],
   },
   {
@@ -230,9 +259,9 @@ export const experiences: Experience[] = [
     company: "Netzrezepte Technologies Pvt. Ltd., Kolkata",
     period: "Nov 2014 - Oct 2015",
     bullets: [
-      "Built and maintained responsive websites with HTML, CSS, JavaScript, and jQuery.",
-      "Implemented interactive UI features: form validations, sliders, modals, and dynamic content.",
-      "Ensured cross-browser/device compatibility and delivered end-to-end solutions on time.",
+      "Developed and maintained responsive, production-grade websites using HTML, CSS, JavaScript, and jQuery.",
+      "Built interactive UI features — form validation, sliders, modals, and dynamic content — to enhance user engagement.",
+      "Guaranteed cross-browser and cross-device compatibility, delivering end-to-end solutions on schedule.",
     ],
   },
   {
@@ -240,9 +269,9 @@ export const experiences: Experience[] = [
     company: "Capital Numbers Infotech, Kolkata",
     period: "Jun 2013 - Nov 2014",
     bullets: [
-      "Created responsive pages and landing pages from Photoshop mockups using HTML5, CSS3, and JS.",
-      "Integrated templates with CMS/PHP backends and added AJAX-driven dynamic content.",
-      "Used Bootstrap and CSS preprocessors within Agile sprints for consistent delivery.",
+      "Crafted responsive pages and high-converting landing pages from Photoshop mockups using HTML5, CSS3, and JavaScript.",
+      "Integrated front-end templates with CMS/PHP backends, adding AJAX-driven dynamic content for richer UX.",
+      "Leveraged Bootstrap and CSS preprocessors within Agile sprints to ensure consistent, on-time delivery.",
     ],
   },
   {
@@ -250,9 +279,9 @@ export const experiences: Experience[] = [
     company: "Evika Systems, Kolkata",
     period: "Jun 2012 - Jun 2013",
     bullets: [
-      "Coded static and dynamic pages with HTML, CSS, and basic JavaScript under senior guidance.",
-      "Built wireframe-aligned layouts and learned web standards, typography, and UI composition.",
-      "Performed cross-browser testing and supported client site updates.",
+      "Coded static and dynamic pages with HTML, CSS, and JavaScript under senior engineer mentorship.",
+      "Built wireframe-aligned layouts while mastering web standards, typography, and UI composition fundamentals.",
+      "Conducted cross-browser testing and supported ongoing client site updates and maintenance.",
     ],
   },
 ];

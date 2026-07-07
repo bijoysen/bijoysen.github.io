@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Baloo_2, Caveat } from "next/font/google";
 import "./globals.css";
-import { profile } from "@/lib/data";
+import { profile, socials } from "@/lib/data";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -34,6 +34,16 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.role,
+  email: profile.email,
+  url: "https://bijoysen.github.io",
+  sameAs: socials.map((s) => s.href),
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -45,7 +55,13 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${poppins.variable} ${baloo.variable} ${caveat.variable}`}
     >
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
