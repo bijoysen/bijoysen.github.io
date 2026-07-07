@@ -1,31 +1,87 @@
 import { getYearsOfExperience, profile } from "@/lib/data";
 
 export default function About() {
-  return (
-    <section id="about" className="py-20 md:py-28">
-      <div className="container-page mx-auto max-w-3xl text-center">
-        <p className="section-kicker">About Me</p>
-        <h2 className="section-title mt-1">
-          Turning ideas into clean interfaces
-        </h2>
-        <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-navy/75">
-          {profile.about}
-        </p>
+  const years = getYearsOfExperience();
 
-        <dl className="mx-auto mt-10 grid max-w-md grid-cols-2 gap-6">
-          <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
-            <dt className="text-sm text-navy/60">Experience</dt>
-            <dd className="mt-1 font-display text-2xl font-bold text-teal">
-              {getYearsOfExperience()}+ Years
-            </dd>
+  const highlights = [
+    {
+      label: "Experience",
+      value: `${years}+ Years`,
+      accent: "text-amber",
+    },
+    {
+      label: "Current Role",
+      value: "Sr. Software Engineer",
+      sub: "Ericsson India",
+      accent: "text-teal",
+    },
+    {
+      label: "Location",
+      value: profile.location,
+      accent: "text-navy",
+    },
+    {
+      label: "Specialization",
+      value: "Frontend Engineering",
+      sub: "React · TypeScript · Angular",
+      accent: "text-teal",
+    },
+  ];
+
+  return (
+    <section id="about" className="bg-white/50 py-20 md:py-28">
+      <div className="container-page">
+        <div className="grid items-start gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+          {/* Left — narrative */}
+          <div>
+            <p className="section-kicker">About Me</p>
+            <h2 className="section-title mt-1">{profile.about.headline}</h2>
+
+            <div className="mt-6 space-y-4">
+              {profile.about.paragraphs.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="leading-relaxed text-navy/75 first:text-base first:font-medium first:text-navy/90"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            <ul className="mt-8 flex flex-wrap gap-2">
+              {profile.about.focusAreas.map((area) => (
+                <li
+                  key={area}
+                  className="rounded-full border border-amber/30 bg-amber/10 px-3.5 py-1.5 text-xs font-semibold text-amber-dark"
+                >
+                  {area}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
-            <dt className="text-sm text-navy/60">Location</dt>
-            <dd className="mt-1 font-display text-2xl font-bold text-teal">
-              {profile.location}
-            </dd>
+
+          {/* Right — highlight cards */}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            {highlights.map((item) => (
+              <div
+                key={item.label}
+                className="group rounded-2xl border border-black/5 bg-cream p-5 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wider text-navy/50">
+                  {item.label}
+                </p>
+                <p
+                  className={`mt-1.5 font-display text-xl font-bold leading-snug ${item.accent}`}
+                >
+                  {item.value}
+                </p>
+                {item.sub && (
+                  <p className="mt-0.5 text-sm text-navy/60">{item.sub}</p>
+                )}
+              </div>
+            ))}
           </div>
-        </dl>
+        </div>
       </div>
     </section>
   );

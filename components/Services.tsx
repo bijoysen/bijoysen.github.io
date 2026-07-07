@@ -3,7 +3,7 @@ import { ServiceIcon } from "./Icons";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-white/50 py-20 md:py-28">
+    <section id="services" className="py-20 md:py-28">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <p className="section-kicker">What I Do</p>
@@ -17,7 +17,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group rounded-2xl bg-cream p-6 shadow-sm ring-1 ring-black/5 transition-transform hover:-translate-y-1"
+              className="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition-transform hover:-translate-y-1"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal/10 text-teal transition-colors group-hover:bg-teal group-hover:text-white">
                 <ServiceIcon name={service.icon} className="h-6 w-6" />

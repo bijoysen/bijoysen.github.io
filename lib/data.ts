@@ -8,11 +8,25 @@ export const profile = {
   // Career start (June 2012). Years of experience is derived from this date.
   careerStart: "2012-06-01",
   email: "bijoysen2012@gmail.com",
-  location: "India",
+  location: "Kolkata, India",
   cvUrl: "/cv.pdf",
   photo: "/portrait.svg",
-  about:
-    "I'm a frontend developer focused on building clean, performant, and accessible interfaces. I turn ideas and designs into responsive web apps with modern tooling like React, Next.js, and TypeScript. I care about the little details that make products feel effortless.",
+  about: {
+    headline: "Building interfaces that scale",
+    paragraphs: [
+      "I'm a senior frontend engineer delivering scalable, enterprise-grade web applications for global MNCs and IT services clients across telecom, e-commerce, and media.",
+      "My core strengths lie in JavaScript, TypeScript, React, and Angular — backed by deep expertise in HTML5, CSS3, modern UI architecture, performance optimization, REST API integration, and analytics with Google Analytics 360.",
+      "Currently serving as Sr. Software Engineer at Ericsson, I ship production frontend solutions within Agile, cross-functional teams. My career has progressed from web design to senior engineering, supported by continuous upskilling and certifications in JavaScript, TypeScript, and Angular.",
+    ],
+    focusAreas: [
+      "Enterprise UI",
+      "Performance",
+      "REST APIs",
+      "Agile Delivery",
+      "Tailwind CSS",
+      "AI-Assisted Dev",
+    ],
+  },
 };
 
 export function getYearsOfExperience(from: string = profile.careerStart): number {
