@@ -40,7 +40,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${baloo.variable} ${caveat.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${poppins.variable} ${baloo.variable} ${caveat.variable}`}
+    >
       <body className="font-sans antialiased">{children}</body>
     </html>
   );
