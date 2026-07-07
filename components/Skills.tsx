@@ -13,17 +13,17 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="mx-auto mt-14 max-w-5xl gap-6 [column-fill:_balance] sm:columns-2 lg:columns-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category) => (
             <div
               key={category.title}
-              className="mb-6 break-inside-avoid rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+              className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
             >
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
-                  <SkillIcon name={category.icon} className="h-5 w-5" />
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                  <SkillIcon name={category.icon} className="h-6 w-6" />
                 </span>
-                <h3 className="font-display text-base font-bold text-navy">
+                <h3 className="font-display text-lg font-bold text-navy">
                   {category.title}
                 </h3>
               </div>
@@ -31,7 +31,7 @@ export default function Skills() {
                 {category.items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-lg border border-teal/15 bg-teal/5 px-3 py-1.5 text-xs font-medium text-teal-dark"
+                    className="rounded-lg border border-teal/15 bg-teal/5 px-3.5 py-2 text-sm font-medium text-teal-dark"
                   >
                     {item}
                   </li>

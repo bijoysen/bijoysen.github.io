@@ -26,17 +26,17 @@ export default function Hero() {
               Available for new opportunities
             </span>
 
-            <p className="mt-5 mb-4 font-script text-3xl text-navy md:text-4xl">
+            <p className="mt-5 font-script text-3xl text-navy md:text-4xl">
               {profile.greeting}
             </p>
-            <h1 className="font-display text-5xl font-extrabold leading-tight tracking-tight text-amber md:text-6xl">
+            <h1 className="mt-2 font-display text-5xl font-extrabold leading-tight tracking-tight text-amber md:text-6xl">
               {profile.firstName} {profile.lastName}.
             </h1>
-            <p className="mt-1 font-script text-3xl text-navy md:text-4xl">
+            <p className="mt-2 font-script text-3xl text-navy md:text-4xl">
               <span className="text-teal">{profile.role.split(" ")[0]}</span>{" "}
               {profile.role.split(" ").slice(1).join(" ")}.
             </p>
-            <p className="mt-3 max-w-md text-base font-medium text-navy/75">
+            <p className="mt-6 text-base font-medium text-navy/75 lg:mt-8 lg:whitespace-nowrap">
               {profile.tagline}
             </p>
 

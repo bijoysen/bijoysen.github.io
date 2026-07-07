@@ -173,6 +173,11 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
+    title: "Deployment & CI/CD",
+    icon: "rocket",
+    items: ["Vercel", "GitHub Actions", "GitHub Pages"],
+  },
+  {
     title: "APIs & Integration",
     icon: "plug",
     items: ["REST APIs", "AJAX", "JSON", "XML", "GraphQL"],
