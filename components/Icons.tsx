@@ -1,4 +1,15 @@
 import type { SVGProps } from "react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  AnalysisTextLinkIcon,
+  CodeIcon as HugeiconsCodeIcon,
+  ElectricPlugsIcon,
+  Layers01Icon,
+  PaintBrush02Icon,
+  Rocket01Icon,
+  SparklesIcon,
+  ToolsIcon,
+} from "@hugeicons/core-free-icons";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
@@ -38,14 +49,6 @@ export function GithubIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
       <path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.28-1.7-1.28-1.7-1.05-.71.08-.7.08-.7 1.16.09 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z" />
-    </svg>
-  );
-}
-
-export function StarIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-      <path d="m12 17.27 5.18 3.12-1.37-5.9 4.58-3.97-6.03-.52L12 4.5 9.64 10l-6.03.52 4.58 3.97-1.37 5.9L12 17.27Z" />
     </svg>
   );
 }
@@ -92,59 +95,6 @@ export function ArrowUpRightIcon(props: IconProps) {
   );
 }
 
-export function LayersIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
-      <path d="m12 2 9 5-9 5-9-5 9-5Z" />
-      <path d="m3 12 9 5 9-5M3 17l9 5 9-5" />
-    </svg>
-  );
-}
-
-export function BrushIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
-      <path d="M9.5 14.5 3 21M14 4l6 6-8.5 8.5a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24L14 4Z" />
-      <path d="m14 4 2-2 6 6-2 2" />
-    </svg>
-  );
-}
-
-export function WrenchIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
-      <path d="M14.7 6.3a4 4 0 0 0 5 5l-9 9a2.1 2.1 0 0 1-3-3l9-9a4 4 0 0 0-2-2Z" />
-    </svg>
-  );
-}
-
-export function RocketIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
-      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-      <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
-      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-    </svg>
-  );
-}
-
-export function PlugIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
-      <path d="M9 2v6M15 2v6M6 8h12v3a6 6 0 0 1-12 0V8ZM12 17v5" />
-    </svg>
-  );
-}
-
-export function ChartIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
-      <path d="M3 3v18h18M7 15l3-4 3 3 4-6" />
-    </svg>
-  );
-}
-
 export function MailIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
@@ -186,23 +136,35 @@ export function ServiceIcon({
 }
 
 const skillIconMap = {
-  code: CodeIcon,
-  layers: LayersIcon,
-  brush: BrushIcon,
-  wrench: WrenchIcon,
-  rocket: RocketIcon,
-  plug: PlugIcon,
-  chart: ChartIcon,
-  spark: SparkIcon,
+  code: HugeiconsCodeIcon,
+  layers: Layers01Icon,
+  brush: PaintBrush02Icon,
+  wrench: ToolsIcon,
+  rocket: Rocket01Icon,
+  plug: ElectricPlugsIcon,
+  chart: AnalysisTextLinkIcon,
+  spark: SparklesIcon,
 };
 
 export type SkillIconName = keyof typeof skillIconMap;
 
 export function SkillIcon({
   name,
-  ...props
-}: { name: SkillIconName } & IconProps) {
-  const Component = skillIconMap[name];
-  if (!Component) return null;
-  return <Component {...props} />;
+  className,
+}: {
+  name: SkillIconName;
+  className?: string;
+}) {
+  const icon = skillIconMap[name];
+  if (!icon) return null;
+
+  return (
+    <HugeiconsIcon
+      icon={icon}
+      size={24}
+      color="currentColor"
+      strokeWidth={1.5}
+      className={className}
+    />
+  );
 }
