@@ -83,6 +83,20 @@ export const socials: SocialLink[] = [
   },
 ];
 
+export const contact = {
+  kicker: "Get In Touch",
+  title: "Let's Connect",
+  description:
+    "Exploring senior frontend roles — recruiters and hiring managers, feel free to reach out.",
+  availability: "Open to new opportunities",
+  timezone: "IST, GMT+5:30",
+  privacyNote:
+    "Your details are only used to reply to your message and are never shared or sold.",
+  // Deployed Apps Script Web App URL (see README "Contact form setup")
+  formEndpoint:
+    "https://script.google.com/macros/s/AKfycbx1CO2nu3MMHmMHjbH2vm-K_QcLUbMkv9wTttWgDXQQ2ERxONOnhweIhRY9jz-DYw-lrA/exec",
+};
+
 export type NavLink = { label: string; href: string };
 
 export const navLinks: NavLink[] = [

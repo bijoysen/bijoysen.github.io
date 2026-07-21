@@ -38,6 +38,28 @@ body {
   .section-kicker {
     @apply font-script text-2xl text-amber md:text-3xl;
   }
+
+  .input-field {
+    @apply w-full rounded-lg border border-black/10 bg-white px-4 py-2.5 text-sm text-navy placeholder:text-navy/40 transition-colors focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20;
+  }
+}
+
+/* Keep the dark contact form fields styled correctly when the browser
+   applies its own autofill background (e.g. after picking a suggestion). */
+.contact-field:-webkit-autofill,
+.contact-field:-webkit-autofill:hover,
+.contact-field:-webkit-autofill:focus,
+.contact-field:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.1) inset;
+  box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.1) inset;
+  caret-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.contact-field:autofill {
+  -webkit-text-fill-color: #ffffff;
+  caret-color: #ffffff;
 }
 
 /* Bootstrap-like responsive container max-widths */

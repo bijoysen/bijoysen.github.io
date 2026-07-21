@@ -34,6 +34,15 @@ export default function Navbar() {
         }
       }
 
+      // If the last section is shorter than the viewport, scrollY may never
+      // reach its top + headerOffset. Force it active once we hit the bottom.
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2;
+      if (atBottom && navLinks.length > 0) {
+        current = navLinks[navLinks.length - 1].href;
+      }
+
       setActiveHref(current);
     };
 
